@@ -1,30 +1,259 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>平静的发布页</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="/logo.png" type="image/x-icon">
-        <style>
-        
-        
-        
-        
-        
-        
-        
-        
-        </style>
-    </head>
-    <body>
-        欢迎访问！
-    
-    
-    
-    
-    
-    
-    
-    
-    </body>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的个人主页</title>
+  <meta name="description" content="个人主页 / Portfolio" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #020617, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 48px 0 32px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 700;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .hero .actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: var(--accent);
+      color: #020617;
+      font-weight: 600;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border-color: #1f2937;
+      color: var(--text);
+    }
+
+    /* Sections */
+    section {
+      margin-top: 56px;
+    }
+
+    section h2 {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #020617, var(--card));
+      border: 1px solid #1f2937;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    /* About */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    /* Skills */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+    }
+
+    .skill {
+      text-align: center;
+      padding: 14px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid #1f2937;
+      font-size: 14px;
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .project h3 {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .project p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      margin: 64px 0 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (min-width: 768px) {
+      .hero {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      .about {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="hero">
+        <div>
+          <h1>你好，我是平静 👋</h1>
+          <p>
+            这里是我的个人主页，用于展示我的简介、技能和一些项目。
+            你可以把它当作一个长期维护的个人空间。
+          </p>
+          <div class="actions">
+            <a class="btn" href="#projects">查看项目</a>
+            <a class="btn secondary" href="#contact">联系我</a>
+          </div>
+        </div>
+        <div class="card">
+          <p>
+            📌 当前状态：<br />
+            专注于学习 / 工作 / 创作中
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>关于我</h2>
+      <div class="about">
+        <div class="card">
+          <p>
+            你可以在这里写一段自我介绍，比如你的职业背景、兴趣方向、
+            或你目前正在做的事情。
+          </p>
+        </div>
+        <div class="card">
+          <p>
+            ✨ 兴趣方向：<br />
+            技术 · 设计 · 写作 · AI · 其他
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>技能</h2>
+      <div class="skills">
+        <div class="skill">HTML / CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Python</div>
+        <div class="skill">C++</div>
+        <div class="skill">AI 应用</div>
+        <div class="skill">学习能力</div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>项目 / 作品</h2>
+      <div class="projects">
+        <div class="card project">
+          <h3>项目名称 A</h3>
+          <p>一句话介绍这个项目解决了什么问题。</p>
+        </div>
+        <div class="card project">
+          <h3>项目名称 B</h3>
+          <p>可以是学习项目、开源项目或个人尝试。</p>
+        </div>
+        <div class="card project">
+          <h3>项目名称 C</h3>
+          <p>后续你可以在这里加链接或截图。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>联系我</h2>
+      <div class="card">
+        <p>
+          📮 邮箱：2013197270@qq.com <br />
+          🌐 GitHub / 博客 / 社交链接
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 平静 · 个人主页
+    </footer>
+  </div>
+</body>
 </html>
